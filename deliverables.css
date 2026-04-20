@@ -66,6 +66,10 @@
     letter-spacing: 0.5px;
 }
 
+.sprint-badge-complete {
+    background: #16a34a;
+}
+
 .sprint-header h2 {
     font-size: 1.5rem;
     font-weight: 600;

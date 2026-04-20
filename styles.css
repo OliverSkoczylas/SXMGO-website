@@ -465,6 +465,136 @@ body {
     color: var(--text-secondary);
 }
 
+/* Sprint Progress Timeline */
+.sprint-timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 48px;
+    position: relative;
+}
+
+.sprint-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.sprint-node-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: 3px solid var(--border-color);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.sprint-node.complete .sprint-node-dot {
+    background: #16a34a;
+    border-color: #16a34a;
+}
+
+.sprint-node.active .sprint-node-dot {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.2);
+}
+
+.sprint-connector {
+    flex: 0 0 80px;
+    height: 3px;
+    background: var(--border-color);
+    margin-top: 9px;
+}
+
+.sprint-connector.complete {
+    background: #16a34a;
+}
+
+.sprint-connector.active {
+    background: linear-gradient(to right, #16a34a, var(--primary-color));
+}
+
+.sprint-node-content {
+    text-align: center;
+    padding: 0 8px;
+}
+
+.sprint-node-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    background: var(--bg-tertiary);
+    color: var(--text-light);
+}
+
+.sprint-node-label.complete {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.sprint-node-label.active {
+    background: #dbeafe;
+    color: var(--primary-color);
+}
+
+.sprint-node-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.sprint-node-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .sprint-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .sprint-node {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .sprint-node-dot {
+        margin-bottom: 0;
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+
+    .sprint-connector {
+        width: 3px;
+        height: 32px;
+        flex: none;
+        margin-top: 0;
+        margin-left: 8px;
+    }
+
+    .sprint-node-content {
+        text-align: left;
+        padding: 0;
+        padding-bottom: 8px;
+    }
+}
+
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
